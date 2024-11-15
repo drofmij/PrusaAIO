@@ -50,7 +50,7 @@
 //===========================================================================
 
 // Uncomment to set a custom printer name.
-//#define PRUSA_AIO_CUSTOM_PRINTER_NAME "AIO Bear"
+#define PRUSA_AIO_CUSTOM_PRINTER_NAME "Kraken 3.0"
 
 //===========================================================================
 //================================ Tall Bear ================================
@@ -94,10 +94,10 @@
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
 //#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_V3_0
-#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_V3_0_EZ
+// #define PRUSA_AIO_MOTHERBOARD_BTT_SKR_V3_0_EZ
 //#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_V2_0_REV_B
 //#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_1_4
-//#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_1_4_TURBO
+#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_1_4_TURBO
 //#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_1_3
 //#define PRUSA_AIO_MOTHERBOARD_BTT_BTT002
 //#define PRUSA_AIO_MOTHERBOARD_BTT_SKR_MINI_E3_V3_0
@@ -280,8 +280,8 @@
  * Supported Thermistors: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Thermistors
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
-#define PRUSA_AIO_THERMISTOR_SEMITEC_104NT
-//#define PRUSA_AIO_THERMISTOR_GENERIC_100K
+// #define PRUSA_AIO_THERMISTOR_SEMITEC_104NT
+#define PRUSA_AIO_THERMISTOR_GENERIC_100K
 //#define PRUSA_AIO_THERMISTOR_SLICE_450C
 //#define PRUSA_AIO_THERMISTOR_TL_T_D500
 
@@ -371,7 +371,7 @@
  *
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
-//#define PRUSA_AIO_MOTHERBOARD_FAN
+// #define PRUSA_AIO_MOTHERBOARD_FAN
 
 //===========================================================================
 //=========================== PID / MPC Settings ============================
@@ -444,12 +444,12 @@
  *
  * LCD Covers: https://github.com/thisiskeithb/PrusaAIO/wiki/Recommended-LCD-Covers
  */
-#define PRUSA_AIO_DISPLAY_STOCK_REPRAP_DISCOUNT_SMART_CONTROLLER
+// #define PRUSA_AIO_DISPLAY_STOCK_REPRAP_DISCOUNT_SMART_CONTROLLER
 //#define PRUSA_AIO_DISPLAY_OLED_REPRAP_DISCOUNT_SMART_CONTROLLER
 //#define PRUSA_AIO_DISPLAY_BTT_DUAL_MODE_TFT
 //#define PRUSA_AIO_DISPLAY_BTT_MINI_12864_NEOPIXEL
 //#define PRUSA_AIO_DISPLAY_FYSETC_MINI_12864_NEOPIXEL
-//#define PRUSA_AIO_DISPLAY_MKS_MINI_12864_NEOPIXEL
+#define PRUSA_AIO_DISPLAY_MKS_MINI_12864_NEOPIXEL
 
 //
 // Reverse the encoder direction everywhere.
@@ -478,7 +478,7 @@
  * Automatically adjust Z Probe Offset with M851 based on selected Sheet Profile.
  * Up to 10 are supported without changes.
  */
-//#define PRUSA_AIO_SHEET_PROFILES_MENU
+#define PRUSA_AIO_SHEET_PROFILES_MENU
 #if ENABLED(PRUSA_AIO_SHEET_PROFILES_MENU)
   #define PRUSA_AIO_SHEET_1_DESC      "Smooth"    // Short description of Sheet
   #define PRUSA_AIO_SHEET_1_OFFSET      -0.000    // Sheet offset. This should be a negative value.
@@ -495,7 +495,7 @@
  *
  * Top-level menu with first layer calibration, nozzle change, semi-automated cold pull, and more.
  */
-//#define PRUSA_AIO_CALIBRATION_MENU
+#define PRUSA_AIO_CALIBRATION_MENU
 
 //===========================================================================
 //================================ NeoPixels ================================
@@ -507,14 +507,14 @@
  *   - WHITE, RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
  */
 #if ANY(PRUSA_AIO_DISPLAY_BTT_MINI_12864_NEOPIXEL, PRUSA_AIO_DISPLAY_FYSETC_MINI_12864_NEOPIXEL, PRUSA_AIO_DISPLAY_MKS_MINI_12864_NEOPIXEL)
-  #define PRUSA_AIO_LCD_NEOPIXEL_COLOR_WHITE
+  // #define PRUSA_AIO_LCD_NEOPIXEL_COLOR_WHITE
   //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_RED
   //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_ORANGE
   //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_YELLOW
   //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_GREEN
-  //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_BLUE
-  //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_INDIGO
-  //#define PRUSA_AIO_LCD_NEOPIXEL_COLOR_VIOLET
+  // #define PRUSA_AIO_LCD_NEOPIXEL_COLOR_BLUE
+  #define PRUSA_AIO_LCD_NEOPIXEL_COLOR_INDIGO
+  // #define PRUSA_AIO_LCD_NEOPIXEL_COLOR_VIOLET
 #endif
 
 // NeoPixel strip is disabled by default. Uncomment to enable.
