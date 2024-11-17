@@ -927,7 +927,7 @@
   #define NEOPIXEL_LED // Enable NeoPixel support
   #define LED_CONTROL_MENU
   #define LED_COLOR_PRESETS
-  #define NEOPIXEL_STARTUP_TEST
+  // #define NEOPIXEL_STARTUP_TEST
 #endif
 
 #if ENABLED(PRUSA_AIO_NEOPIXEL_STRIP) // Both NeoPixel Strip & Mini 12864 w/ NeoPixels / Dual NeoPixel workaround
