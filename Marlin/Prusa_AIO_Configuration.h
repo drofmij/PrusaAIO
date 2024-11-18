@@ -50,7 +50,7 @@
 //===========================================================================
 
 // Uncomment to set a custom printer name.
-#define PRUSA_AIO_CUSTOM_PRINTER_NAME "Kraken 3.0"
+#define PRUSA_AIO_CUSTOM_PRINTER_NAME "Kraken III"
 
 //===========================================================================
 //================================ Tall Bear ================================
@@ -357,10 +357,10 @@
  * Supported Fans: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Fans
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
-#define PRUSA_AIO_PART_COOLING_FAN_GENERIC
+// #define PRUSA_AIO_PART_COOLING_FAN_GENERIC
 //#define PRUSA_AIO_PART_COOLING_FAN_24V_MECHATRONICS_B5015E24B_BSR
 //#define PRUSA_AIO_PART_COOLING_FAN_24V_DELTA_BFB0524HH
-//#define PRUSA_AIO_PART_COOLING_FAN_24V_SOUNDORIGINAL
+#define PRUSA_AIO_PART_COOLING_FAN_24V_SOUNDORIGINAL
 //#define PRUSA_AIO_PART_COOLING_FAN_12V_STOCK_PRUSA_MK25S_5015
 //#define PRUSA_AIO_PART_COOLING_FAN_12V_SOUNDORIGINAL
 //#define PRUSA_AIO_PART_COOLING_FAN_5V_STOCK_PRUSA_MK3S_5015
@@ -384,19 +384,19 @@
  *
  * If needed, uncomment PRUSA_AIO_CUSTOM_HOTEND_PID or PRUSA_AIO_CUSTOM_BED_PID to customize PID settings.
  */
-//#define PRUSA_AIO_CUSTOM_HOTEND_PID
+#define PRUSA_AIO_CUSTOM_HOTEND_PID
 #if ENABLED(PRUSA_AIO_CUSTOM_HOTEND_PID)
-  #define PRUSA_AIO_DEFAULT_Kp  16.50
-  #define PRUSA_AIO_DEFAULT_Ki   1.16
-  #define PRUSA_AIO_DEFAULT_Kd  58.80
+  #define PRUSA_AIO_DEFAULT_Kp 17.58
+  #define PRUSA_AIO_DEFAULT_Ki 1.48
+  #define PRUSA_AIO_DEFAULT_Kd 52.38
   // Find your own by running "M303 E0 C8 S210" via serial to run autotune on the hotend at 210 °C for 8 cycles.
 #endif
 
-//#define PRUSA_AIO_CUSTOM_BED_PID
+#define PRUSA_AIO_CUSTOM_BED_PID
 #if ENABLED(PRUSA_AIO_CUSTOM_BED_PID)
-  #define PRUSA_AIO_DEFAULT_bedKp  28.13
-  #define PRUSA_AIO_DEFAULT_bedKi   2.09
-  #define PRUSA_AIO_DEFAULT_bedKd 483.07
+  #define PRUSA_AIO_DEFAULT_bedKp 42.63
+  #define PRUSA_AIO_DEFAULT_bedKi 2.64
+  #define PRUSA_AIO_DEFAULT_bedKd 458.28
   // Find your own by running "M303 E-1 C8 S65" via serial to run autotune on the bed at 65 °C for 8 cycles.
 #endif
 
