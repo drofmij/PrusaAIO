@@ -318,7 +318,7 @@
  * If needed, uncomment to customize probe offset. This can also be customized via LCD
  * under Configuration -> Advanced Settings -> Probe Offsets
  */
-//#define PRUSA_AIO_NOZZLE_TO_PROBE_OFFSET { 23, 5, 0 }
+#define PRUSA_AIO_NOZZLE_TO_PROBE_OFFSET { 23, 5, -0.65 }
 
 /**
  * Bed Leveling Type
