@@ -565,10 +565,10 @@
  *  X<1>         Set the given parameters only for the X axis.
  *  Y<1>         Set the given parameters only for the Y axis.
  */
-//#define PRUSA_AIO_INPUT_SHAPING
+#define PRUSA_AIO_INPUT_SHAPING
 #if ENABLED(PRUSA_AIO_INPUT_SHAPING)
-  #define PRUSA_AIO_SHAPING_FREQ_X            40    // (Hz) The default dominant resonant frequency on the X axis.
-  #define PRUSA_AIO_SHAPING_FREQ_Y            40    // (Hz) The default dominant resonant frequency on the Y axis.
+  #define PRUSA_AIO_SHAPING_FREQ_X            52.5    // (Hz) The default dominant resonant frequency on the X axis.
+  #define PRUSA_AIO_SHAPING_FREQ_Y            48   // (Hz) The default dominant resonant frequency on the Y axis.
   #define PRUSA_AIO_SHAPING_ZETA_X             0.15 // Damping ratio of the X axis (range: 0.0 = no damping to 1.0 = critical damping).
   #define PRUSA_AIO_SHAPING_ZETA_Y             0.15 // Damping ratio of the Y axis (range: 0.0 = no damping to 1.0 = critical damping).
   //#define PRUSA_AIO_SHAPING_MIN_FREQ        20.0  // By default the minimum of the shaping frequencies. Override to affect SRAM usage.
