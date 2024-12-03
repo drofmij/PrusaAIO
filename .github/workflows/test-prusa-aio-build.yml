@@ -22,7 +22,7 @@ on:
 jobs:
   test_builds:
     name: Test Build
-    if: github.repository == 'thisiskeithb/PrusaAIO'
+    if: github.repository == 'drofmij/PrusaAIO'
 
     runs-on: ubuntu-22.04
 
