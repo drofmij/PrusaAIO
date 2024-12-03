@@ -386,9 +386,9 @@
  */
 #define PRUSA_AIO_CUSTOM_HOTEND_PID
 #if ENABLED(PRUSA_AIO_CUSTOM_HOTEND_PID)
-  #define PRUSA_AIO_DEFAULT_Kp 17.58
-  #define PRUSA_AIO_DEFAULT_Ki 1.48
-  #define PRUSA_AIO_DEFAULT_Kd 52.38
+  #define PRUSA_AIO_DEFAULT_Kp 16.44
+  #define PRUSA_AIO_DEFAULT_Ki 1.36
+  #define PRUSA_AIO_DEFAULT_Kd 49.87
   // Find your own by running "M303 E0 C8 S210" via serial to run autotune on the hotend at 210 °C for 8 cycles.
 #endif
 
