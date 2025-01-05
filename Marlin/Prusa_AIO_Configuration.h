@@ -386,17 +386,17 @@
  */
 #define PRUSA_AIO_CUSTOM_HOTEND_PID
 #if ENABLED(PRUSA_AIO_CUSTOM_HOTEND_PID)
-  #define PRUSA_AIO_DEFAULT_Kp 16.44
-  #define PRUSA_AIO_DEFAULT_Ki 1.36
-  #define PRUSA_AIO_DEFAULT_Kd 49.87
+  #define PRUSA_AIO_DEFAULT_Kp 16.9
+  #define PRUSA_AIO_DEFAULT_Ki 1.41
+  #define PRUSA_AIO_DEFAULT_Kd 50.72
   // Find your own by running "M303 E0 C8 S210" via serial to run autotune on the hotend at 210 °C for 8 cycles.
 #endif
 
 #define PRUSA_AIO_CUSTOM_BED_PID
 #if ENABLED(PRUSA_AIO_CUSTOM_BED_PID)
-  #define PRUSA_AIO_DEFAULT_bedKp 42.63
-  #define PRUSA_AIO_DEFAULT_bedKi 2.64
-  #define PRUSA_AIO_DEFAULT_bedKd 458.28
+  #define PRUSA_AIO_DEFAULT_bedKp 39
+  #define PRUSA_AIO_DEFAULT_bedKi 2
+  #define PRUSA_AIO_DEFAULT_bedKd 460
   // Find your own by running "M303 E-1 C8 S65" via serial to run autotune on the bed at 65 °C for 8 cycles.
 #endif
 
@@ -567,8 +567,8 @@
  */
 #define PRUSA_AIO_INPUT_SHAPING
 #if ENABLED(PRUSA_AIO_INPUT_SHAPING)
-  #define PRUSA_AIO_SHAPING_FREQ_X            52.5    // (Hz) The default dominant resonant frequency on the X axis.
-  #define PRUSA_AIO_SHAPING_FREQ_Y            48   // (Hz) The default dominant resonant frequency on the Y axis.
+  #define PRUSA_AIO_SHAPING_FREQ_X            40    // (Hz) The default dominant resonant frequency on the X axis.
+  #define PRUSA_AIO_SHAPING_FREQ_Y            40   // (Hz) The default dominant resonant frequency on the Y axis.
   // #define PRUSA_AIO_SHAPING_ZETA_X             0.35 // Damping ratio of the X axis (range: 0.0 = no damping to 1.0 = critical damping).
   #define PRUSA_AIO_SHAPING_ZETA_X            0.15
   // #define PRUSA_AIO_SHAPING_ZETA_Y             0.5 // Damping ratio of the Y axis (range: 0.0 = no damping to 1.0 = critical damping).
