@@ -481,10 +481,10 @@
 #define PRUSA_AIO_SHEET_PROFILES_MENU
 #if ENABLED(PRUSA_AIO_SHEET_PROFILES_MENU)
   #define PRUSA_AIO_SHEET_1_DESC      "Smooth"    // Short description of Sheet
-  #define PRUSA_AIO_SHEET_1_OFFSET      -0.550    // Sheet offset. This should be a negative value.
+  #define PRUSA_AIO_SHEET_1_OFFSET      -1.225    // Sheet offset. This should be a negative value.
 
   #define PRUSA_AIO_SHEET_2_DESC    "Textured"
-  #define PRUSA_AIO_SHEET_2_OFFSET      -1.000
+  #define PRUSA_AIO_SHEET_2_OFFSET      -1.225
 
   //#define PRUSA_AIO_SHEET_3_DESC     "Satin"
   //#define PRUSA_AIO_SHEET_3_OFFSET    -0.000
