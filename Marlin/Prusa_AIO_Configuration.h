@@ -318,7 +318,7 @@
  * If needed, uncomment to customize probe offset. This can also be customized via LCD
  * under Configuration -> Advanced Settings -> Probe Offsets
  */
-#define PRUSA_AIO_NOZZLE_TO_PROBE_OFFSET { 23, 5, -0.65 }
+#define PRUSA_AIO_NOZZLE_TO_PROBE_OFFSET { 23, 5, -1.250 }
 
 /**
  * Bed Leveling Type
@@ -481,10 +481,10 @@
 #define PRUSA_AIO_SHEET_PROFILES_MENU
 #if ENABLED(PRUSA_AIO_SHEET_PROFILES_MENU)
   #define PRUSA_AIO_SHEET_1_DESC      "Smooth"    // Short description of Sheet
-  #define PRUSA_AIO_SHEET_1_OFFSET      -1.225    // Sheet offset. This should be a negative value.
+  #define PRUSA_AIO_SHEET_1_OFFSET      -1.250    // Sheet offset. This should be a negative value.
 
   #define PRUSA_AIO_SHEET_2_DESC    "Textured"
-  #define PRUSA_AIO_SHEET_2_OFFSET      -1.225
+  #define PRUSA_AIO_SHEET_2_OFFSET      -1.250
 
   //#define PRUSA_AIO_SHEET_3_DESC     "Satin"
   //#define PRUSA_AIO_SHEET_3_OFFSET    -0.000
