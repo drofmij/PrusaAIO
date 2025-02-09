@@ -7,7 +7,7 @@
  * Test Prusa AIO configuration values and give warnings at compile-time.
  */
 #include "MarlinConfig.h"
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 //
 // Warnings! Located here so they will appear just once in the build output.
@@ -74,12 +74,12 @@
 
 #if ENABLED(PRUSA_AIO_DISPLAY_BTT_DUAL_MODE_TFT)
   #if ENABLED(PRUSA_AIO_SINGLE_EXP_CONNECTION)
-    #warning "Connect 10-pin IDC cable from EXP1 on motherboard to EXP3 on BigTreeTech Dual Mode TFT. If LCD does not light up, try rotating EXP cable 180° on one end."
+    #warning "Connect 10-pin IDC cable from EXP1 on motherboard to EXP3 on BigTreeTech Dual Mode TFT. If LCD does not light up, rotate EXP cable 180° on one end."
   #else
-    #warning "Connect both 10-pin IDC cables from EXP1/EXP2 on motherboard to EXP1/EXP2 on BigTreeTech Dual Mode TFT. If LCD does not light up, try rotating EXP cables 180° on one end."
+    #warning "Connect both 10-pin IDC cables from EXP1/EXP2 on motherboard to EXP1/EXP2 on BigTreeTech Dual Mode TFT. If LCD does not light up, rotate EXP cables 180° on one end."
   #endif
 #else
-  #warning "If LCD does not light up, try rotating EXP cables 180° on one end."
+  #warning "If LCD does not light up, rotate EXP cables 180° on one end."
 #endif
 
 // Remind users to remove onboard SD card after flashing or they will get a "MEDIA INIT FAIL" error message due to a shared SD_DETECT signal

@@ -25,7 +25,7 @@
  * - MK2.5S Support
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 //===========================================================================
 //============= Getting Started with Prusa All-in-One Firmware ==============
@@ -371,7 +371,7 @@
  *
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
-// #define PRUSA_AIO_MOTHERBOARD_FAN
+//#define PRUSA_AIO_MOTHERBOARD_FAN
 
 //===========================================================================
 //=========================== PID / MPC Settings ============================
@@ -552,11 +552,15 @@
 //===========================================================================
 
 /**
- * Input Shaping -- EXPERIMENTAL
+ * Input Shaping
  *
  * Zero Vibration (ZV) Input Shaping for X and/or Y movements.
  *
- * See https://github.com/MarlinFirmware/Marlin/pull/24797 for configuration & full details.
+ * See the following links for configuration & full details:
+ *
+ *       Input Shaping on marlinfw.org: https://marlinfw.org/docs/features/input_shaping.html
+ *    Single Layer Calibration Pattern: https://marlinfw.org/tools/input_shaping/freq-calibr.html
+ * Original Input Shaping Pull Request: https://github.com/MarlinFirmware/Marlin/pull/24797
  *
  * Tune with M593 D<factor> F<frequency>:
  *

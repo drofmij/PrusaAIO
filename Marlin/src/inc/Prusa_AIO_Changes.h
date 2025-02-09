@@ -8,7 +8,7 @@
  * Alert about Prusa_AIO_Configuration.h changes at compile-time.
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 #ifdef PRUSA_AIO_PRINTER_NAME
   #error "PRUSA_AIO_PRINTER_NAME is now PRUSA_AIO_CUSTOM_PRINTER_NAME. Please update your config."

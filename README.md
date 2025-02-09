@@ -11,6 +11,7 @@
     <a href="https://github.com/sponsors/thisiskeithb"><img alt="GitHub Sponsors" src="https://img.shields.io/github/sponsors/thisiskeithb?logo=github%20sponsors&label=GitHub%20Sponsors&color=ea4aaa"></a>
     <br />
     <a href="https://twitter.com/thisiskeithb"><img alt="Follow thisiskeithb on Twitter" src="https://img.shields.io/twitter/url/https/twitter.com/thisiskeithb.svg?style=social&label=Follow%20%40thisiskeithb"></a>
+    <a href="https://bsky.app/profile/thisiskeithb.bsky.social"><img alt="Follow thisiskeithb on Bluesky" src="https://img.shields.io/static/v1?label=&message=Follow @thisiskeithb&color=1185FE&logo=bluesky&logoColor=white"></a>
 </p>
 
 ## Table of Contents

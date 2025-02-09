@@ -31,7 +31,7 @@
  * Basic settings can be found in Configuration.h
  */
 #define CONFIGURATION_ADV_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 // @section develop
 
@@ -175,9 +175,10 @@
  * Thermocouple Options — for MAX6675 (-2), MAX31855 (-3), and MAX31865 (-5).
  */
 //#define TEMP_SENSOR_FORCE_HW_SPI                // Ignore SCK/MOSI/MISO pins; use CS and the default SPI bus.
-//#define MAX31865_SENSOR_WIRES_0 2               // (2-4) Number of wires for the probe connected to a MAX31865 board.
-//#define MAX31865_SENSOR_WIRES_1 2
-//#define MAX31865_SENSOR_WIRES_2 2
+//#define MAX31865_SENSOR_WIRES_0   2             // (2-4) Number of wires for the probe connected to a MAX31865 board.
+//#define MAX31865_SENSOR_WIRES_1   2
+//#define MAX31865_SENSOR_WIRES_2   2
+//#define MAX31865_SENSOR_WIRES_BED 2
 
 //#define MAX31865_50HZ_FILTER                    // Use a 50Hz filter instead of the default 60Hz.
 //#define MAX31865_USE_READ_ERROR_DETECTION       // Treat value spikes (20°C delta in under 1s) as read errors.
@@ -189,6 +190,7 @@
 //#define MAX31865_WIRE_OHMS_0              0.95f // For 2-wire, set the wire resistances for more accurate readings.
 //#define MAX31865_WIRE_OHMS_1              0.0f
 //#define MAX31865_WIRE_OHMS_2              0.0f
+//#define MAX31865_WIRE_OHMS_BED            0.0f
 
 /**
  * Hephestos 2 24V heated bed upgrade kit.
@@ -212,17 +214,18 @@
 //
 // Heated Chamber options
 //
-#if DISABLED(PIDTEMPCHAMBER)
-  #define CHAMBER_CHECK_INTERVAL 5000   // (ms) Interval between checks in bang-bang control
-  #if ENABLED(CHAMBER_LIMIT_SWITCHING)
-    #define CHAMBER_HYSTERESIS 2        // (°C) Only set the relevant heater state when ABS(T-target) > CHAMBER_HYSTERESIS
-  #endif
-#endif
 
 #if TEMP_SENSOR_CHAMBER
   //#define HEATER_CHAMBER_PIN      P2_04   // Required heater on/off pin (example: SKR 1.4 Turbo HE1 plug)
   //#define HEATER_CHAMBER_INVERTING false
   //#define FAN1_PIN                   -1   // Remove the fan signal on pin P2_04 (example: SKR 1.4 Turbo HE1 plug)
+
+  #if DISABLED(PIDTEMPCHAMBER)
+    #define CHAMBER_CHECK_INTERVAL 5000   // (ms) Interval between checks in bang-bang control
+    #if ENABLED(CHAMBER_LIMIT_SWITCHING)
+      #define CHAMBER_HYSTERESIS 2        // (°C) Only set the relevant heater state when ABS(T-target) > CHAMBER_HYSTERESIS
+    #endif
+  #endif
 
   //#define CHAMBER_FAN               // Enable a fan on the chamber
   #if ENABLED(CHAMBER_FAN)
@@ -1020,7 +1023,7 @@
 
 #endif // BLTOUCH
 
-// @section calibration
+// @section calibrate
 
 /**
  * Z Steppers Auto-Alignment
@@ -1867,7 +1870,7 @@
    *
    *    SCLK, MOSI, MISO --> SCLK, MOSI, MISO
    *    INT              --> SD_DETECT_PIN [1]
-   *    SS               --> SDSS
+   *    SS               --> SD_SS_PIN
    *
    * [1] On AVR an interrupt-capable pin is best for UHS3 compatibility.
    */
@@ -1894,7 +1897,7 @@
     #define USE_OTG_USB_HOST
 
     #if DISABLED(USE_OTG_USB_HOST)
-      #define USB_CS_PIN    SDSS
+      #define USB_CS_PIN    SD_SS_PIN
       #define USB_INTR_PIN  SD_DETECT_PIN
     #endif
   #endif
@@ -2046,6 +2049,12 @@
 #if HAS_MARLINUI_U8GLIB || IS_DWIN_MARLINUI
   #define MENU_HOLLOW_FRAME           // Enable to save many cycles by drawing a hollow frame on Menu Screens
   //#define OVERLAY_GFX_REVERSE       // Swap the CW/CCW indicators in the graphics overlay
+
+  // Frivolous Game Options
+  //#define MARLIN_BRICKOUT
+  //#define MARLIN_INVADERS
+  //#define MARLIN_SNAKE
+  //#define GAMES_EASTER_EGG          // Add extra blank lines above the "Games" sub-menu
 #endif
 
 //
@@ -2301,7 +2310,7 @@
   #if ENABLED(DOUBLECLICK_FOR_Z_BABYSTEPPING)
     #define DOUBLECLICK_MAX_INTERVAL  800   // Maximum interval between clicks, in milliseconds.
                                             // Note: Extra time may be added to mitigate controller latency.
-    // #define MOVE_Z_WHEN_IDLE                // Jump to the move Z menu on double-click when printer is idle.
+    #define MOVE_Z_WHEN_IDLE                // Jump to the move Z menu on double-click when printer is idle.
     #if ENABLED(MOVE_Z_WHEN_IDLE)
       #define MOVE_Z_IDLE_MULTIPLICATOR 10  // Multiply 1mm by this factor for the move step size.
     #endif

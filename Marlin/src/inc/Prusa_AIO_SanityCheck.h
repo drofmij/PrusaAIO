@@ -8,7 +8,7 @@
  * Validate Prusa_AIO_Configuration.h options at compile-time.
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 //===========================================================================
 //=============================== Motherboard ===============================

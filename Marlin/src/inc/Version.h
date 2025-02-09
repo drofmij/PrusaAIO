@@ -33,7 +33,7 @@
  * vendor name, download location, GitHub account, etc.
  */
 #ifndef DETAILED_BUILD_VERSION
-  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION
+  #define DETAILED_BUILD_VERSION "Prusa AIO " SHORT_BUILD_VERSION
 #endif
 
 /**
@@ -42,7 +42,7 @@
  * version was tagged.
  */
 #ifndef STRING_DISTRIBUTION_DATE
-  #define STRING_DISTRIBUTION_DATE "2024-11-04"
+  #define STRING_DISTRIBUTION_DATE "2025-02-04"
 #endif
 
 /**

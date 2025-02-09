@@ -36,7 +36,7 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20241019
+#define PRUSA_AIO_VERSION 20250121
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -95,7 +95,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
@@ -599,6 +599,10 @@
 #if TEMP_SENSOR_IS_MAX_TC(2)
   #define MAX31865_SENSOR_OHMS_2      100
   #define MAX31865_CALIBRATION_OHMS_2 430
+#endif
+#if TEMP_SENSOR_IS_MAX_TC(BED)
+  #define MAX31865_SENSOR_OHMS_BED      100
+  #define MAX31865_CALIBRATION_OHMS_BED 430
 #endif
 
 #if HAS_E_TEMP_SENSOR
@@ -1508,7 +1512,6 @@
  * For information about this sensor https://github.com/bigtreetech/MicroProbe
  *
  * Also requires PROBE_ENABLE_DISABLE
- * With FT_MOTION requires ENDSTOP_INTERRUPTS_FEATURE
  */
 //#define BIQU_MICROPROBE_V1  // Triggers HIGH
 //#define BIQU_MICROPROBE_V2  // Triggers LOW
@@ -1647,15 +1650,15 @@
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN PRUSA_AIO_PROBING_MARGIN
 
-// X and Y axis travel speed (mm/min) between probes.
+// X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
-#define XY_PROBE_FEEDRATE (180*60)
+#define XY_PROBE_FEEDRATE    (180*60) // (mm/min)
 
-// Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (15*60)
+// Feedrate for the first approach when double-probing (MULTIPLE_PROBING == 2)
+#define Z_PROBE_FEEDRATE_FAST (15*60) // (mm/min)
 
-// Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
+// Feedrate for the "accurate" probe of each point
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2) // (mm/min)
 
 /**
  * Probe Activation Switch
@@ -1772,17 +1775,17 @@
 // @section stepper drivers
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
-// :{ 0:'Low', 1:'High' }
-#define X_ENABLE_ON 0
-#define Y_ENABLE_ON 0
-#define Z_ENABLE_ON 0
-#define E_ENABLE_ON 0 // For all extruders
-//#define I_ENABLE_ON 0
-//#define J_ENABLE_ON 0
-//#define K_ENABLE_ON 0
-//#define U_ENABLE_ON 0
-//#define V_ENABLE_ON 0
-//#define W_ENABLE_ON 0
+// :['LOW', 'HIGH']
+#define X_ENABLE_ON LOW
+#define Y_ENABLE_ON LOW
+#define Z_ENABLE_ON LOW
+#define E_ENABLE_ON LOW // For all extruders
+//#define I_ENABLE_ON LOW
+//#define J_ENABLE_ON LOW
+//#define K_ENABLE_ON LOW
+//#define U_ENABLE_ON LOW
+//#define V_ENABLE_ON LOW
+//#define W_ENABLE_ON LOW
 
 // Disable axis steppers immediately when they're not being stepped.
 // WARNING: When motors turn off there is a chance of losing position accuracy!
@@ -2104,6 +2107,12 @@
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
+
+/**
+ * Commands to execute at the start of G29 probing,
+ * after switching to the PROBING_TOOL.
+ */
+//#define EVENT_GCODE_BEFORE_G29 "M300 P440 S200"
 
 /**
  * Commands to execute at the end of G29 probing.
@@ -2460,13 +2469,13 @@
 // Preheat Constants - Up to 10 are supported without changes
 //
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 195
+#define PREHEAT_1_TEMP_HOTEND 215
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_TEMP_CHAMBER  0
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PET"
-#define PREHEAT_2_TEMP_HOTEND 225
+#define PREHEAT_2_TEMP_HOTEND 230
 #define PREHEAT_2_TEMP_BED     85
 #define PREHEAT_2_TEMP_CHAMBER  0
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
@@ -3214,14 +3223,14 @@
 //
 // Tiny, but very sharp OLED display
 //
-//#define MKS_12864OLED          // Uses the SH1106 controller (default)
+//#define MKS_12864OLED          // Uses the SH1106 controller
 //#define MKS_12864OLED_SSD1306  // Uses the SSD1306 controller
 
 //
 // Zonestar OLED 128×64 Full Graphics Controller
 //
 //#define ZONESTAR_12864LCD           // Graphical (DOGM) with ST7920 controller
-//#define ZONESTAR_12864OLED          // 1.3" OLED with SH1106 controller (default)
+//#define ZONESTAR_12864OLED          // 1.3" OLED with SH1106 controller
 //#define ZONESTAR_12864OLED_SSD1306  // 0.96" OLED with SSD1306 controller
 
 //
@@ -3470,7 +3479,7 @@
 
 #if ENABLED(TFT_COLOR_UI)
   /**
-   * TFT Font for Color_UI. Choose one of the following:
+   * TFT Font for Color UI. Choose one of the following:
    *
    * NOTOSANS  - Default font with anti-aliasing. Supports Latin Extended and non-Latin characters.
    * UNIFONT   - Lightweight font, no anti-aliasing. Supports Latin Extended and non-Latin characters.
@@ -3479,7 +3488,7 @@
   #define TFT_FONT  NOTOSANS
 
   /**
-   * TFT Theme for Color_UI. Choose one of the following or add a new one to 'Marlin/src/lcd/tft/themes' directory
+   * TFT Theme for Color UI. Choose one of the following or add a new one to 'Marlin/src/lcd/tft/themes' directory
    *
    * BLUE_MARLIN  - Default theme with 'midnight blue' background
    * BLACK_MARLIN - Theme with 'black' background
@@ -3555,7 +3564,9 @@
 // https://reprapworld.com/products/electronics/ramps/keypad_v1_0_fully_assembled/
 //
 //#define REPRAPWORLD_KEYPAD
-//#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per key-press
+#if ENABLED(REPRAPWORLD_KEYPAD)
+  //#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per key-press
+#endif
 
 //
 // EasyThreeD ET-4000+ with button input and status LED
