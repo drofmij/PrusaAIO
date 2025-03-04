@@ -190,8 +190,8 @@
  * Supported Motors: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motors
  * Wiring Guide: https://github.com/thisiskeithb/PrusaAIO/wiki/Supported-Motherboards-&-Wiring-Guide
  */
-#define PRUSA_AIO_XY_STEPPERS_STOCK
-//#define PRUSA_AIO_XY_STEPPERS_LDO_0_9
+//#define PRUSA_AIO_XY_STEPPERS_STOCK
+#define PRUSA_AIO_XY_STEPPERS_LDO_0_9
 //#define PRUSA_AIO_XY_STEPPERS_MOONS_0_9
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
