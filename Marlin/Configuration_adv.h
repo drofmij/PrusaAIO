@@ -2310,7 +2310,7 @@
   #if ENABLED(DOUBLECLICK_FOR_Z_BABYSTEPPING)
     #define DOUBLECLICK_MAX_INTERVAL  800   // Maximum interval between clicks, in milliseconds.
                                             // Note: Extra time may be added to mitigate controller latency.
-    #define MOVE_Z_WHEN_IDLE                // Jump to the move Z menu on double-click when printer is idle.
+    // #define MOVE_Z_WHEN_IDLE                // Jump to the move Z menu on double-click when printer is idle.
     #if ENABLED(MOVE_Z_WHEN_IDLE)
       #define MOVE_Z_IDLE_MULTIPLICATOR 10  // Multiply 1mm by this factor for the move step size.
     #endif

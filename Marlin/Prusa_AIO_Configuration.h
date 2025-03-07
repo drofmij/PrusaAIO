@@ -195,8 +195,8 @@
 //#define PRUSA_AIO_XY_STEPPERS_MOONS_0_9
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-//#define PRUSA_AIO_INVERT_X_DIR
-//#define PRUSA_AIO_INVERT_Y_DIR
+#define PRUSA_AIO_INVERT_X_DIR
+#define PRUSA_AIO_INVERT_Y_DIR
 //#define PRUSA_AIO_INVERT_Z_DIR
 //#define PRUSA_AIO_INVERT_E_DIR
 
