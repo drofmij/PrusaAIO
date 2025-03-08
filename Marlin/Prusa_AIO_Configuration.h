@@ -211,11 +211,11 @@
  * If needed, uncomment PRUSA_AIO_*_STALL sensorless (StallGuard) settings below.
  * Settings can also be customized via LCD under Configuration -> Advanced Settings -> TMC Drivers -> Sensorless Homing
  */
-//#define PRUSA_AIO_X_STALL_SENSITIVITY  90
-//#define PRUSA_AIO_Y_STALL_SENSITIVITY  100
+#define PRUSA_AIO_X_STALL_SENSITIVITY  87
+#define PRUSA_AIO_Y_STALL_SENSITIVITY  85
 
 // If needed, uncomment PRUSA_AIO_HOMING_FEEDRATE_MM_M to customize Homing speeds (mm/min)
-//#define PRUSA_AIO_HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+#define PRUSA_AIO_HOMING_FEEDRATE_MM_M { (2000), (2000), (4*60) }
 
 //===========================================================================
 //================================ Extruder =================================
