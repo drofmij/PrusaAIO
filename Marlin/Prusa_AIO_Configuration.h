@@ -484,7 +484,7 @@
   #define PRUSA_AIO_SHEET_1_OFFSET      -1.250    // Sheet offset. This should be a negative value.
 
   #define PRUSA_AIO_SHEET_2_DESC    "Textured"
-  #define PRUSA_AIO_SHEET_2_OFFSET      -1.250
+  #define PRUSA_AIO_SHEET_2_OFFSET      -1.750
 
   //#define PRUSA_AIO_SHEET_3_DESC     "Satin"
   //#define PRUSA_AIO_SHEET_3_OFFSET    -0.000
