@@ -20,7 +20,7 @@
  *
  */
 #pragma once
-#define PRUSA_AIO_VERSION 20250121
+#define PRUSA_AIO_VERSION 20250626
 
 #ifndef __MARLIN_FIRMWARE__
 #define __MARLIN_FIRMWARE__

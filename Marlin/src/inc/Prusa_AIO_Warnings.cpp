@@ -7,7 +7,7 @@
  * Test Prusa AIO configuration values and give warnings at compile-time.
  */
 #include "MarlinConfig.h"
-#define PRUSA_AIO_VERSION 20250121
+#define PRUSA_AIO_VERSION 20250626
 
 //
 // Warnings! Located here so they will appear just once in the build output.
@@ -23,9 +23,9 @@
 //===========================================================================
 
 #if DISABLED(PRUSA_AIO_NO_DRIVER_UART_SPI_JUMPERS)
-  #if ANY(PRUSA_AIO_DRIVERS_TMC2209, PRUSA_AIO_DRIVERS_TMC2226_015_RSENSE, PRUSA_AIO_DRIVERS_TMC2226_011_RSENSE) // TMC2209s/TMC2226s are configured via UART
+  #if ANY(PRUSA_AIO_DRIVERS_TMC2209, PRUSA_AIO_DRIVERS_TMC2226_015_RSENSE, PRUSA_AIO_DRIVERS_TMC2226_011_RSENSE)
     #warning "Ensure driver jumpers are set to UART mode".
-  #elif ANY(PRUSA_AIO_DRIVERS_TMC5160, PRUSA_AIO_DRIVERS_TMC2130) // TMC5160s/TMC2130s are configured via SPI
+  #elif ANY(PRUSA_AIO_DRIVERS_TMC2240, PRUSA_AIO_DRIVERS_TMC5160, PRUSA_AIO_DRIVERS_TMC2130)
     #warning "Ensure driver jumpers are set to SPI mode."
   #endif
 #endif

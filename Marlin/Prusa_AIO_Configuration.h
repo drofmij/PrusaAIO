@@ -25,7 +25,7 @@
  * - MK2.5S Support
  */
 #define CONFIGURATION_H_VERSION 02010300
-#define PRUSA_AIO_VERSION 20250121
+#define PRUSA_AIO_VERSION 20250626
 
 //===========================================================================
 //============= Getting Started with Prusa All-in-One Firmware ==============
@@ -569,14 +569,12 @@
  *  X<1>         Set the given parameters only for the X axis.
  *  Y<1>         Set the given parameters only for the Y axis.
  */
-#define PRUSA_AIO_INPUT_SHAPING
+//#define PRUSA_AIO_INPUT_SHAPING
 #if ENABLED(PRUSA_AIO_INPUT_SHAPING)
   #define PRUSA_AIO_SHAPING_FREQ_X            40    // (Hz) The default dominant resonant frequency on the X axis.
-  #define PRUSA_AIO_SHAPING_FREQ_Y            40   // (Hz) The default dominant resonant frequency on the Y axis.
-  // #define PRUSA_AIO_SHAPING_ZETA_X             0.35 // Damping ratio of the X axis (range: 0.0 = no damping to 1.0 = critical damping).
-  #define PRUSA_AIO_SHAPING_ZETA_X            0.15
-  // #define PRUSA_AIO_SHAPING_ZETA_Y             0.5 // Damping ratio of the Y axis (range: 0.0 = no damping to 1.0 = critical damping).
-  #define PRUSA_AIO_SHAPING_ZETA_Y            0.15
+  #define PRUSA_AIO_SHAPING_FREQ_Y            40    // (Hz) The default dominant resonant frequency on the Y axis.
+  #define PRUSA_AIO_SHAPING_ZETA_X             0.15 // Damping ratio of the X axis (range: 0.0 = no damping to 1.0 = critical damping).
+  #define PRUSA_AIO_SHAPING_ZETA_Y             0.15 // Damping ratio of the Y axis (range: 0.0 = no damping to 1.0 = critical damping).
   //#define PRUSA_AIO_SHAPING_MIN_FREQ        20.0  // By default the minimum of the shaping frequencies. Override to affect SRAM usage.
   //#define PRUSA_AIO_SHAPING_MAX_STEPRATE 10000    // By default the maximum total step rate of the shaped axes. Override to affect SRAM usage.
 #endif
